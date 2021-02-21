@@ -1,24 +1,16 @@
-  import React from 'react';
+import React from 'react';
 import {
   Button, Stack, FormControl, FormLabel, Input, FormErrorMessage
 } from '@chakra-ui/react';
 import { useForm }  from 'react-hook-form';
 
+import api from '../../api';
+
 function LoginForm() {
   const { register, errors, handleSubmit, formState } = useForm();
 
   const submitForm = (values) => {
-
-    return fetch('/login', { method: 'POST' })
-      .then(response => response.json())
-      .then(data => console.log(data))
-
-    // console.log('form values: ', values)
-    // return new Promise((resolve, reject) => {
-    //   setTimeout(() => {
-    //     resolve()
-    //   }, 3000);
-    // })
+    return api.login(values.email, values.password)
   }
 
   const validateEmail = (value) => {
