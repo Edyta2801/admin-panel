@@ -1,3 +1,7 @@
+install template for chakra-ui:
+npx create-react-app admin-panel --template @chakra-ui
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
