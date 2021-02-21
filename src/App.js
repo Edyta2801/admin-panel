@@ -12,6 +12,7 @@ import {
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { Logo } from './Logo';
 import LoginPage from './pages/login';
+import UsersPage from './pages/users';
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
         <Grid minH="100vh" p={3}>
           <ColorModeSwitcher justifySelf="flex-end" />
           <LoginPage/>
-
+          <UsersPage />
 
         </Grid>
       </Box>
