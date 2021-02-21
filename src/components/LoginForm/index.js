@@ -1,4 +1,4 @@
-import React from 'react';
+  import React from 'react';
 import {
   Button, Stack, FormControl, FormLabel, Input, FormErrorMessage
 } from '@chakra-ui/react';
@@ -9,9 +9,10 @@ function LoginForm() {
 
   const submitForm = (values) => {
 
-    return fetch('/login', {method:'POST'})
-    .then (response=>response.json()
-    .then(data=>console.log(data)))
+    return fetch('/login', { method: 'POST' })
+      .then(response => response.json())
+      .then(data => console.log(data))
+
     // console.log('form values: ', values)
     // return new Promise((resolve, reject) => {
     //   setTimeout(() => {
