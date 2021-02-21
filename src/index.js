@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
 
-// eslint-disable-next-line eqeqeq
+
 if (process.env.REACT_APP_ENABLE_MOCKS == 1) {
   const { worker } = require('./api/mocks/browser')
   worker.start()

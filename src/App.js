@@ -4,33 +4,50 @@ import {
   Box,
   Grid,
   theme,
+  Stack,
+  Flex,
 } from '@chakra-ui/react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import SecureRoute from './components/SecureRoute';
 import LoginPage from './pages/login';
-import UsersPage from './pages/users';
+import Users from './pages/users';
 
 function App() {
+
   return (
     <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <Router>
-            <Route path="/login" exact>
+      <Grid minH="100vh" p={3}>
+        <ColorModeSwitcher justifySelf="flex-end" />
+        <Router>
+          {/* <Stack h="7vh" p={2} justify="center" align="center" isInline>
+            <Box>
+              <Link exact to="/">Home</Link>
+            </Box>
+            <Box>
+              <Link to="/login">Login</Link>
+            </Box>
+            <Box>
+              <Link to="/users">Users</Link>
+            </Box>
+          </Stack> */}
+
+          <Stack>
+            <Route exact path="/login">
               <LoginPage />
             </Route>
-            <SecureRoute path="/users" exact>
-              <UsersPage />
+            <SecureRoute exact path="/users" component={Users}>
+              {/* <Users /> */}
             </SecureRoute>
-            <Route path="/" exact>
-              Hello
-              <Link to="/users">Show me users</Link>
-            </Route>
-          </Router>
-        </Grid>
-      </Box>
+            <Box spacing={5} justify="center" align="center">
+              <Route exact path="/">
+                Hello
+                <Link to="/users">Show me users</Link>
+              </Route>
+            </Box>
+          </Stack>
+        </Router>
+      </Grid>
     </ChakraProvider>
   );
 }
