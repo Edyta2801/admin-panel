@@ -1,4 +1,5 @@
-install template for chakra-ui:
+First install template for chakra-ui:
+
 npx create-react-app admin-panel --template @chakra-ui
 
 
